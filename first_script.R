@@ -28,7 +28,8 @@ df %>%
   ggplot(aes(reorder(TrafficChannel,Prop_Active), Prop_Active)) +
   geom_col() +
   coord_flip() +
-  ggtitle("2 måndeders retention rate fordelt på Trafikkanaler")
+  ggtitle("2 måndeders retention rate fordelt på Trafikkanaler") +
+  theme_minimal()
 
 
 # mean retention by channel
@@ -44,7 +45,9 @@ df %>%
   drop_na() %>%
   ggplot(aes(x=TrafficChannel,y=m)) +
   geom_bar(stat="identity",width=.7) +
-  geom_errorbar(aes(ymin=lowCI,ymax=hiCI),width=.2) 
+  geom_errorbar(aes(ymin=lowCI,ymax=hiCI),width=.2) +
+  ggtitle("Gennemsnitligt varighed af medlemsskab (dage)") +
+  theme_minimal()
 
 
 
